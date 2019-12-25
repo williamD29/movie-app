@@ -1,0 +1,96 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+$icon-size: 18px;
+
+body {
+    @apply bg-gray-900;
+    box-sizing: border-box;
+}
+
+/**************************************************/
+
+.btn {
+    transition: background-color .2s;
+    @apply outline-none py-2 px-4 inline-block rounded font-medium;
+
+    &.btn-primary {
+        @apply bg-purple-600 text-gray-100;
+
+        &:hover {
+            @apply bg-purple-700;
+        }
+    }
+    &.btn-secondary {
+        @apply bg-gray-800 text-gray-100;
+
+        &:hover {
+            @apply bg-gray-700;
+        }
+    }
+    &.btn-tertiary {
+        @apply bg-transparent text-gray-100;
+
+        &:hover {
+            @apply bg-gray-800;
+        }
+    }
+    &.icon {
+        @apply px-2;
+    }
+}
+
+/**************************************************/
+
+input {
+    transition: border-color .2s;
+    padding: calc(0.5rem - 2px) calc(1rem - 2px);
+    @apply block bg-gray-800 outline-none rounded text-gray-100 border-2 border-transparent;
+
+    &:focus {
+        @apply border-purple-600;
+    }
+    &::placeholder {
+        @apply text-gray-500;
+    }
+    &.icon {
+        background-size: $icon-size $icon-size;
+        @apply bg-no-repeat;
+
+        &.left {
+            background-position: center left calc(1.25rem - ($icon-size / 2));
+            @apply pl-10;
+        }
+        &.right {
+            background-position: center right calc(1.25rem - ($icon-size / 2));
+            @apply pr-10;
+        }
+        &.search {
+            background-image: url("../css/images/search.svg");
+        }
+        
+    }
+}
+
+/**************************************************/
+
+.navbar {
+    @apply flex justify-between py-2 px-4 bg-gray-900 shadow-md;
+
+    .navbar-content {
+        @apply flex;
+
+        .btn, 
+        input {
+            @apply mx-1;
+        }
+        .searchbar {
+            width: 300px;
+        }
+    }
+}
+
+/**************************************************/
