@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
 @tailwind base;
 
 @tailwind components;
@@ -7,15 +9,43 @@
 $icon-size: 18px;
 
 body {
-    @apply bg-gray-900;
+    @apply bg-gray-900 text-gray-100;
     box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+img {
+    @apply w-full h-auto;
+}
+
+h1 {
+    @apply text-4xl;
+}
+h2 {
+    @apply text-3xl;
+}
+h3 {
+    @apply text-2xl;
+}
+h4 {
+    @apply text-xl;
+}
+h5 {
+    @apply text-lg;
+}
+h6 {
+    @apply font-bold;
+}
+
+.subtitle {
+    @apply text-gray-400;
 }
 
 /**************************************************/
 
 .btn {
     transition: background-color .2s;
-    @apply outline-none py-2 px-4 inline-block rounded font-medium;
+    @apply outline-none py-2 px-4 inline-block rounded font-semibold;
 
     &.btn-primary {
         @apply bg-purple-600 text-gray-100;
@@ -94,3 +124,41 @@ input {
 }
 
 /**************************************************/
+
+.header {
+    &.background {
+        height: 700px;
+        width: 100%;
+        background-image: url("../images/wave.svg"), url("../images/gradient.jpg");
+        background-size: contain, cover;
+        background-repeat: no-repeat;
+        background-position: bottom center, center center;
+
+        .wrapper {
+            @apply pt-12; 
+            .test {
+                border-radius: 1rem;
+                @apply bg-gray-800 mt-12 mx-auto shadow-2xl px-16 py-8;
+
+                .recent {
+                    @apply flex justify-between;
+
+                    div {
+                        @apply mx-2;
+                        &:first-child {
+                            @apply ml-0;
+                        }
+                        &:last-child {
+                            @apply mr-0;
+                        }
+                        a {
+                            img {
+                                @apply rounded-lg object-cover h-full;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -14,6 +14,9 @@
 			<div id="content">
 				<?= view("pages/" . $content); ?>
 			</div>
+			<footer>
+			
+			</footer>
 		</div>
 	</body>
 </html>
